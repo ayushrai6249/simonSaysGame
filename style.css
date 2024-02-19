@@ -149,12 +149,13 @@ body {
 
     .rule {
         padding: 30px;
-        height: 780px;
+        height: 700px;
         width: 330px;
         border-radius: 20px;
         position: absolute;
         top: 3%;
-        justify-content:space-between;
+        justify-content: space-between;
+        font-size: 18px;
 
     }
 }
