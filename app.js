@@ -52,7 +52,7 @@ function userBtnFlash(btn) {
     btn.classList.add("userFlash");
     setTimeout(function () {
         btn.classList.remove("userFlash");
-    }, 250);
+    }, 100);
 }
 function btnPress() {
     let btn = this;
