@@ -1,0 +1,160 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.rule {
+    z-index: 10;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 600px;
+    width: 900px;
+    background-color: rgb(0, 73, 128);
+    font-size: 20px;
+    border-radius: 80px;
+    position: absolute;
+    top: 5%;
+    transform: translate(0%, 0%) scale(1);
+    transition: transform 1.5s, top 1.5s, opacity 1.5s;
+    opacity: 1;
+}
+
+.closePopup {
+    top: 0;
+    transform: translate(0%, -40%) scale(0.2);
+    opacity: 0;
+}
+
+.contBtn {
+    height: 50px;
+    width: 120px;
+    border: none;
+    background-color: green;
+    border-radius: 30px;
+    color: white;
+    font-size: 20px;
+}
+
+body {
+    text-align: center;
+    background: url(Images/pcBcg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container h1 {
+    color: silver;
+    text-decoration: underline;
+}
+
+.text {
+    height: 100px;
+}
+
+.container {
+    width: 900px;
+    height: 650px;
+    backdrop-filter: blur(30px);
+    border-radius: 30px;
+    box-shadow: 3px 3px 100px black;
+    visibility: hidden;
+}
+
+.btn {
+    height: 200px;
+    width: 200px;
+    border-radius: 20%;
+    border: 10px solid black;
+    margin: 2.5rem;
+}
+
+.btnContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.red {
+    background-color: #df3b3b;
+}
+
+.yellow {
+    background-color: #deee08;
+}
+
+.green {
+    background-color: #25ec50;
+}
+
+.purple {
+    background-color: #4a71e7;
+}
+
+.flash {
+    background-color: white;
+}
+
+.userFlash {
+    background-color: green;
+}
+
+.phnBtn {
+    display: none;
+}
+
+@media (max-width: 786px) {
+    .container {
+        width: 350px;
+        height: 550px;
+    }
+
+    .btn {
+        height: 130px;
+        width: 130px;
+        border: 5px solid black;
+        margin: 1.1rem;
+    }
+
+    .text {
+        height: 120px;
+    }
+
+    .container h1 {
+        color: black;
+        text-decoration: underline;
+    }
+
+    .phnBtn {
+        display: block;
+        position: relative;
+        bottom: -20px;
+    }
+
+    #startBtn {
+        height: 50px;
+        width: 120px;
+        border: none;
+        background-color: green;
+        border-radius: 30px;
+        color: white;
+        font-size: 20px;
+    }
+
+    .rule {
+        padding: 30px;
+        height: 580px;
+        width: 330px;
+        border-radius: 20px;
+        position: absolute;
+        top: 2%;
+        justify-content:space-between;
+
+    }
+}
