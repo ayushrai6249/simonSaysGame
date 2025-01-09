@@ -42,7 +42,7 @@ function checkAns(idx) {
             setTimeout(levelUp, 1000);
         }
     } else {
-        if (level === 3) {
+        if (level === 10) {
             h2.innerHTML = `GAME OVER! <br> <b>"AliceWasBrave@XI"</b> <br> Press key to Restart`;
         } else {
             h2.innerHTML = `GAME OVER! <br> <b>Your score was ${level}</b> <br> Press key to Restart`;
