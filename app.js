@@ -8,20 +8,22 @@ let level = 0;
 let h2 = document.querySelector('h2');
 
 document.addEventListener('keypress', function () {
-    if (started == false) {
+    if (!started) {
         started = true;
         levelUp();
-        document.querySelector('body').style.background = "url('Images/pcBcg.jpg')"
-        document.querySelector('body').style.backgroundRepeat = "no-repeat"
-        document.querySelector('body').style.backgroundSize = "cover"
+        document.querySelector('body').style.background = "url('Images/pcBcg.jpg')";
+        document.querySelector('body').style.backgroundRepeat = "no-repeat";
+        document.querySelector('body').style.backgroundSize = "cover";
     }
-})
+});
+
 function btnFlash(btn) {
     btn.classList.add("flash");
     setTimeout(function () {
         btn.classList.remove("flash");
     }, 250);
 }
+
 function levelUp() {
     userSeq = [];
     level++;
@@ -33,27 +35,32 @@ function levelUp() {
     gameSeq.push(randColor);
     btnFlash(randBtn);
 }
-function checkAns(idx) {
 
+function checkAns(idx) {
     if (gameSeq[idx] === userSeq[idx]) {
         if (userSeq.length == gameSeq.length) {
             setTimeout(levelUp, 1000);
         }
-    }
-    else {
-        h2.innerHTML = `GAME OVER! <br> <b>Your score was ${level}</b> <br> Press key to Restart `;
-        document.querySelector('body').style.background = "url('Images/lose.jpg')"
-        document.querySelector('body').style.backgroundRepeat = "no-repeat"
-        document.querySelector('body').style.backgroundSize = "cover"
+    } else {
+        if (level === 10) {
+            h2.innerHTML = `GAME OVER! <br> <b>AliceWasBrave@XI</b> <br> Press key to Restart`;
+        } else {
+            h2.innerHTML = `GAME OVER! <br> <b>Your score was ${level}</b> <br> Press key to Restart`;
+        }
+        document.querySelector('body').style.background = "url('Images/lose.jpg')";
+        document.querySelector('body').style.backgroundRepeat = "no-repeat";
+        document.querySelector('body').style.backgroundSize = "cover";
         reset();
     }
 }
+
 function userBtnFlash(btn) {
     btn.classList.add("userFlash");
     setTimeout(function () {
         btn.classList.remove("userFlash");
     }, 100);
 }
+
 function btnPress() {
     let btn = this;
     userBtnFlash(btn);
@@ -65,8 +72,8 @@ function btnPress() {
 }
 
 let allBtns = document.querySelectorAll('.btn');
-for (btn of allBtns) {
-    btn.addEventListener("click", btnPress)
+for (let btn of allBtns) {
+    btn.addEventListener("click", btnPress);
 }
 
 function reset() {
@@ -74,18 +81,17 @@ function reset() {
     gameSeq = [];
     userSeq = [];
     level = 0;
-    phnBtn.style.display= "";
-
+    phnBtn.style.display = "";
 }
 
 let phnBtn = document.getElementById('startBtn');
 phnBtn.addEventListener('click', function () {
-    if (started == false) {
+    if (!started) {
         started = true;
         levelUp();
-        document.querySelector('body').style.background = "url('Images/pcBcg.jpg')"
-        document.querySelector('body').style.backgroundRepeat = "no-repeat"
-        document.querySelector('body').style.backgroundSize = "cover"
-        phnBtn.style.display= "none";
+        document.querySelector('body').style.background = "url('Images/pcBcg.jpg')";
+        document.querySelector('body').style.backgroundRepeat = "no-repeat";
+        document.querySelector('body').style.backgroundSize = "cover";
+        phnBtn.style.display = "none";
     }
-})
+});
